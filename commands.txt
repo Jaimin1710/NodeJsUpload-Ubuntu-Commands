@@ -1,1 +1,38 @@
+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
+
+
+https://github.com/yeshwanthlm/nodejs-on-ec2/tree/master
+
+Step 1: Install NodeJS and NPM using nvm
+
+sudo su -
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+. ~/.nvm/nvm.sh
+
+nvm install node
+
+node -v
+npm -v
+
+sudo apt-get update -y
+
+sudo apt-get install git -y
+
+
+git — version
+git clone https://github.com/yeshwanthlm/nodejs-on-ec2.git
+
+cd projectname
+npm install
+
+npm start
+
+npm install -g ts-node
+
+npm run watch
+
+
+pm2 start npm -- start
 
