@@ -1,6 +1,8 @@
 
-
-
+//for root folder access : sudo su -
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/Jaimin1710
+ 
 https://github.com/yeshwanthlm/nodejs-on-ec2/tree/master
 
 Step 1: Install NodeJS and NPM using nvm
@@ -21,18 +23,101 @@ sudo apt-get update -y
 sudo apt-get install git -y
 
 
-git — version
+git --version
+
 git clone https://github.com/yeshwanthlm/nodejs-on-ec2.git
 
 cd projectname
 npm install
+npm install typescript
+npm install -g ts-node
+
+npm run build
+
+touch .env
+
+nano .env
 
 npm start
 
-npm install -g ts-node
+// for heap storage   /// https://www.makeuseof.com/javascript-heap-out-of-memory-error-fix/     or >>>>> https://geekflare.com/fix-javascript-heap-out-of-memory-error/
+//optional >>>> env:NODE_OPTIONS="--max-old-space-size=4096"
+set NODE_OPTIONS=--max-old-space-size=4096
+export NODE_OPTIONS=--max-old-space-size=4096
+npm start
 
-npm run watch
 
 
-pm2 start npm -- start
+set new token to github
 
+https://github.com/settings/tokens/new
+
+
+//pm2
+
+>>npm install pm2 -g
+
+pm2 start 'npm run start'
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Jaimin1710/TOCbackend.git
+git push -u origin main
+
+
+........For Update code on github
+git add .
+git commit -m "first commit"
+{ // optional
+git remote add origin https://github.com/Jaimin1710/stickerRushBackend.git
+git branch -M main
+}
+git push -u origin main
+
+.....Get Update code on server:::
+>> go to project folder then use command
+
+git remote set-url origin https://github.com/Jaimin1710/stickerRushBackend.git
+git pull origin main
+
+
+for build TS>>>> add tsconfig.json file
+{
+
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": ["DOM","ES6","ESNext.AsyncIterable"],
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
+  }
+}
+
+}
+
+//no replace this::>>>
+
+ "watch": "tsc -w",
+    "dev": "nodemon src/index.ts",
+    "start": "nodemon dist/index.js",
+    "build": "tsc -p .",
+    "postinstall": "npm run build"
+	
+	
+//now commande >>> npm run build  && npm run start
+
+
+/// this is for typescript run
+ //"dev": "nodemon --exec npx ts-node ./src/index.ts",
+    //"start": "nodemon --exec npx ts-node ./dist/index.js",
+    //"build": "tsc",
