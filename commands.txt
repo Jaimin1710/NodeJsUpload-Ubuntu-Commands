@@ -121,3 +121,6 @@ for build TS>>>> add tsconfig.json file
  //"dev": "nodemon --exec npx ts-node ./src/index.ts",
     //"start": "nodemon --exec npx ts-node ./dist/index.js",
     //"build": "tsc",
+
+
+pm2 start npm --name "StickerRushSocket" -- start
