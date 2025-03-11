@@ -1,5 +1,6 @@
 
-ghp_      vh9wDmOl0ppR3s  J0WYTSt8aFHMubKg1xokLo
+ghp_J    j2cVXEQNf2uSUS4l2urqVi5Q9Ua1Y326eiU
+
 //for root folder access : sudo su -
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/Jaimin1710
